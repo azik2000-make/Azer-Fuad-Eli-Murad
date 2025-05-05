@@ -167,7 +167,7 @@
       <img src="BMW_2.avif" alt="BMW 2 Series">
 
 
-     
+
       <h3>BMW 2 Series</h3>
       <p>2018, 2.0L, 120000 km</p>
       <p>Qiymət: 35,000 AZN</p>
@@ -364,8 +364,8 @@
       <p>Əlavə xüsusiyyətlər: Panoramik tavan, yeni təkərlər, yüksək keyfiyyətli audio sistemi.</p>
       <p>Texniki xidmət: Bütün texniki xidmətlər vaxtında yerinə yetirilib.</p>
       <p>Sənədlər: Bütün sənədlər tamdır və hüquqi baxımdan heç bir problemi yoxdur.</p>
-      </div>
-   
+    </div>
+
     <div class="elan">
       <img src="BMW_I5.jpeg" alt="BMW i5">
       <h3>BMW i5</h3>
@@ -495,474 +495,634 @@
       <p>Texniki xidmət: Bütün texniki xidmətlər vaxtında yerinə yetirilib.</p>
       <p>Sənədlər: Bütün sənədlər tamdır və hüquqi baxımdan heç bir problemi yoxdur.</p>
     </div>
-    <script>
-      let elan1 = document.querySelectorAll('.elan')[0];
-      let button1 = document.createElement('button');
-      button1.innerText = "Ətraflı Məlumat";
-
-      let link1 = document.createElement('a');
-      link1.href = "https://www.bmw.com.tr/tr/all-models/2-series.html";
-      link1.innerText = "Ətraflı bax";
-      link1.target = "_blank";
-      link1.style.display = "none";
-
-      elan1.appendChild(button1);
-      elan1.appendChild(link1);
-
-      button1.addEventListener('click', function () {
-        link1.style.display = "inline";
-        link1.click();
-      });
-    </script>
 
     <script>
-      let elan2 = document.querySelectorAll('.elan')[1];
-      let button2 = document.createElement('button');
-      button2.innerText = "Ətraflı Məlumat";
+      // Sayfadakı bütün ".elan" sinifinə malik elanları seçirik
+const elanlar = document.querySelectorAll('.elan');
 
-      let link2 = document.createElement('a');
-      link2.href = "https://www.bmw.com.tr/tr/all-models/3-series.html";
-      link2.innerText = "Ətraflı bax";
-      link2.target = "_blank";
-      link2.style.display = "none";
+// Hər bir elanın üzərindən keçirik
+elanlar.forEach((elan, index) => {
+  
+  // Yeni bir "button" elementi yaradırıq
+  const button = document.createElement('button');
+  button.innerText = "Ətraflı Məlumat"; // Düymənin üzərindəki yazı
 
-      elan2.appendChild(button2);
-      elan2.appendChild(link2);
+  // Yeni bir "a" (link) elementi yaradırıq
+  const link = document.createElement('a');
 
-      button2.addEventListener('click', function () {
-        link2.style.display = "inline";
-        link2.click();
-      });
+  // Hər bir BMW modelinə uyğun linkləri saxlayan array
+  const modelLinks = [
+    "https://www.bmw.com.tr/tr/all-models/2-series.html",
+    "https://www.bmw.com.tr/tr/all-models/3-series.html",
+    "https://www.bmw.com.tr/tr/all-models/4-series.html",
+    "https://www.bmw.com.tr/tr/all-models/5-series.html",
+    "https://www.bmw.com.tr/tr/all-models/7-series.html",
+    "https://www.bmw.com.tr/tr/all-models/8-series.html",
+    "https://www.bmw.com.tr/tr/all-models/x1.html",
+    "https://www.bmw.com.tr/tr/all-models/x2.html",
+    "https://www.bmw.com.tr/tr/all-models/x3.html",
+    "https://www.bmw.com.tr/tr/all-models/x4.html",
+    "https://www.bmw.com.tr/tr/all-models/x5.html",
+    "https://www.bmw.com.tr/tr/all-models/x6.html",
+    "https://www.bmw.com.tr/tr/all-models/x7.html",
+    "https://www.bmw.com.tr/tr/all-models/xm.html",
+    "https://www.bmw.com.tr/tr/all-models/i4.html",
+    "https://www.bmw.com.tr/tr/all-models/i5.html",
+    "https://www.bmw.com.tr/tr/all-models/i7.html",
+    "https://www.bmw.com.tr/tr/all-models/ix1.html",
+    "https://www.bmw.com.tr/tr/all-models/ix3.html",
+    "https://www.bmw.com.tr/tr/all-models/ix.html",
+    "https://www.bmw.com.tr/tr/all-models/m2.html",
+    "https://www.bmw.com.tr/tr/all-models/m3.html",
+    "https://www.bmw.com.tr/tr/all-models/m4.html",
+    "https://www.bmw.com.tr/tr/all-models/m5.html",
+    "https://www.bmw.com.tr/tr/all-models/m8.html"
+  ];
+
+  // Elan nömrəsinə uyğun linki təyin edirik (əgər yoxdursa "#" istifadə olunur)
+  link.href = modelLinks[index] || "#";
+
+  // Linkin üzərində görünəcək yazı
+  link.innerText = "Ətraflı bax";
+
+  // Link yeni səhifədə açılsın deyə `target="_blank"` təyin edilir
+  link.target = "_blank";
+  <!DOCTYPE html>
+<html lang="az">
+
+<head>
+  <meta charset="UTF-8">
+  <title>speed.az</title>
+  <link rel="stylesheet" href="TEAM-3.css">
+</head>
+
+<body>
+
+  <!-- Yuxarı navbar -->
+  <header>
+    <div>
+      <h1> <strong>BMW speed.az</strong></h1> <!-- Burada "BMW" əlavə etdik -->
+    </div>
+  </header>
+
+  <!-- Axtarış paneli -->
+  <section>
+    <h1>BMW Axtar</h1> <!-- Burada "BMW" əlavə etdik -->
+    <form id="car-search-form">
+      <label>Model:</label>
+      <select name="model" id="model-select">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="X1">X1</option>
+        <option value="X2">X2</option>
+        <option value="X3">X3</option>
+        <option value="X4">X4</option>
+        <option value="X5">X5</option>
+        <option value="X6">X6</option>
+        <option value="X7">X7</option>
+        <option value="XM">XM</option>
+        <option value="i4">i4</option>
+        <option value="i5">i5</option>
+        <option value="i7">i7</option>
+        <option value="iX1">iX1</option>
+        <option value="iX3">iX3</option>
+        <option value="iX">iX</option>
+        <option value="M2">M2</option>
+        <option value="M3">M3</option>
+        <option value="M4">M4</option>
+        <option value="M5">M5</option>
+        <option value="M8">M8</option>
+      </select>
+
+      <label>İl:</label>
+      <select name="il">
+        <option value="2025">2025</option>
+        <option value="2024">2024</option>
+        <option value="2023">2023</option>
+        <option value="2022">2022</option>
+        <option value="2021">2021</option>
+        <option value="2020">2020</option>
+        <option value="2019">2019</option>
+        <option value="2018">2018</option>
+        <option value="2017">2017</option>
+        <option value="2016">2016</option>
+        <option value="2015">2015</option>
+        <option value="2014">2014</option>
+        <option value="2013">2013</option>
+        <option value="2012">2012</option>
+        <option value="2011">2011</option>
+        <option value="2010">2010</option>
+        <option value="2009">2009</option>
+        <option value="2008">2008</option>
+        <option value="2007">2007</option>
+        <option value="2006">2006</option>
+        <option value="2005">2005</option>
+        <option value="2004">2004</option>
+        <option value="2003">2003</option>
+        <option value="2002">2002</option>
+        <option value="2001">2001</option>
+        <option value="2000">2000</option>
+        <option value="1999">1999</option>
+        <option value="1998">1998</option>
+        <option value="1997">1997</option>
+        <option value="1996">1996</option>
+        <option value="1995">1995</option>
+        <option value="1994">1994</option>
+        <option value="1993">1993</option>
+        <option value="1992">1992</option>
+        <option value="1991">1991</option>
+        <option value="1990">1990</option>
+        <option value="1989">1989</option>
+        <option value="1988">1988</option>
+        <option value="1987">1987</option>
+        <option value="1986">1986</option>
+        <option value="1985">1985</option>
+        <option value="1984">1984</option>
+        <option value="1983">1983</option>
+        <option value="1982">1982</option>
+        <option value="1981">1981</option>
+        <option value="1980">1980</option>
+        <option value="1979">1979</option>
+        <option value="1978">1978</option>
+        <option value="1977">1977</option>
+        <option value="1976">1976</option>
+        <option value="1975">1975</option>
+        <option value="1974">1974</option>
+        <option value="1973">1973</option>
+        <option value="1972">1972</option>
+        <option value="1971">1971</option>
+        <option value="1970">1970</option>
+        <option value="1969">1969</option>
+        <option value="1968">1968</option>
+        <option value="1967">1967</option>
+        <option value="1966">1966</option>
+        <option value="1965">1965</option>
+        <option value="1964">1964</option>
+        <option value="1963">1963</option>
+        <option value="1962">1962</option>
+        <option value="1961">1961</option>
+        <option value="1960">1960</option>
+        <option value="1959">1959</option>
+        <option value="1958">1958</option>
+        <option value="1957">1957</option>
+        <option value="1956">1956</option>
+        <option value="1955">1955</option>
+        <option value="1954">1954</option>
+        <option value="1953">1953</option>
+        <option value="1952">1952</option>
+        <option value="1951">1951</option>
+        <option value="1950">1950</option>
+        <option value="1949">1949</option>
+        <option value="1948">1948</option>
+        <option value="1947">1947</option>
+        <option value="1946">1946</option>
+        <option value="1945">1945</option>
+        <option value="1944">1944</option>
+        <option value="1943">1943</option>
+        <option value="1942">1942</option>
+        <option value="1941">1941</option>
+        <option value="1940">1940</option>
+        <option value="1939">1939</option>
+        <option value="1938">1938</option>
+        <option value="1937">1937</option>
+        <option value="1936">1936</option>
+        <option value="1935">1935</option>
+        <option value="1934">1934</option>
+        <option value="1933">1933</option>
+        <option value="1932">1932</option>
+        <option value="1931">1931</option>
+        <option value="1930">1930</option>
+        <option value="1929">1929</option>
+        <option value="1928">1928</option>
+        <option value="1927">1927</option>
+
+      </select>
+      <label>Qiymət aralığı:</label>
+      <input type="number" name="min_price" placeholder="Min">
+      <input type="number" name="max_price" placeholder="Max">
+
+      <button type="submit">Axtar</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Elanlar</h2>
+
+    <div class="elan">
+      <img src="BMW_2.avif" alt="BMW 2 Series">
+
+
+
+      <h3>BMW 2 Series</h3>
+      <p>2018, 2.0L, 120000 km</p>
+      <p>Qiymət: 35,000 AZN</p>
+      <p><strong>Əlavə Məlumat:</strong> </p>
+
+      <p>Yolun vəziyyəti: Avtomobil mükəmməl vəziyyətdədir, heç bir qəza izləri yoxdur.</p>
+      <p>Yanacaq sərfiyyatı: 100 km-də təxmini 8 litr yanacaq sərf edir.</p>
+      <p>Əlavə xüsusiyyətlər: Yüksək keyfiyyətli audio sistemi, yeni təkərlər, park sensorları.</p>
+      <p>Texniki xidmət: Bütün texniki xidmətlər vaxtında yerinə yetirilib.</p>
+      <p>Sənədlər: Bütün sənədlər tamdır və hüquqi baxımdan heç bir problemi yoxdur.</p>
+
+    </div>
+
+    <div class="elan">
+      <img src="BMW_3.jpg" alt="BMW 3 Series">
+      <h3>BMW 3 Series</h3>
+      <p>2020, 2.0L, 85000 km</p>
+      <p>Qiymət: 50,000 AZN</p>
+      <p><strong>Əlavə Məlumat:</strong></p>
+      <p>Yolun vəziyyəti: Mükəmməl vəziyyətdədir, heç bir zərər və ya izlər yoxdur.</p>
+      <p>Yanacaq sərfiyyatı: 100 km-də 6.5 litr yanacaq sərf edir.</p>
+      <p>Əlavə xüsusiyyətlər: Panoramik tavan, yüksək keyfiyyətli audio sistemi.</p>
+      <p>Texniki xidmət: Bütün texniki xidmətlər yerinə yetirilib.</p>
+      <p>Sənədlər: Qeydiyyatlı və bütün sənədlər tamdır.</p>
+
+    </div>
+
+    <div class="elan">
+      <img src="BMW_4.avif" alt="BMW 4 Series">
+      <h3>BMW 4 Series</h3>
+      <p>2021, 2.0L, 45000 km</p>
+      <p>Qiymət: 55,000 AZN</p>
+      <p><strong>Əlavə Məlumat:</strong></p>
+      <p>Yolun vəziyyəti: Avtomobil heç bir qəza keçirməyib, normal istifadə edilib.</p>
+      <p>Yanacaq sərfiyyatı: 100 km-də 7.2 litr yanacaq sərf edir.</p>
+      <p>Əlavə xüsusiyyətlər: Keyfiyyətli audio, park sensorları, yeni təkərlər.</p>
+      <p>Texniki xidmət: Bütün texniki xidmətlər tam və vaxtında yerinə yetirilib.</p>
+      <p>Sənədlər: Bütün sənədlər mövcuddur və hüquqi baxımdan heç bir problemi yoxdur.</p>
+    </div>
+
+    <div class="elan">
+      <img src="BMW_5.jpeg" alt="BMW 5 Series">
+      <h3>BMW 5 Series</h3>
+      <p>2020, 2.0L, 70000 km</p>
+      <p>Qiymət: 60,000 AZN</p>
+      <p><strong>Əlavə Məlumat:</strong></p>
+      <p>Yolun vəziyyəti: Avtomobilin vəziyyəti yaxşıdır, heç bir zərər və ya qəza izləri yoxdur.</p>
+      <p>Yanacaq sərfiyyatı: 100 km-də 8 litr yanacaq sərf edir.</p>
+      <p>Əlavə xüsusiyyətlər: Panoramik tavan, yüksək keyfiyyətli audio sistemi.</p>
+      <p>Texniki xidmət: Bütün texniki xidmətlər vaxtında yerinə yetirilib.</p>
+      <p>Sənədlər: Bütün sənədlər tamdır və hüquqi baxımdan heç bir problemi yoxdur.</p>
+    </div>
+
+    <div class="elan">
+      <img src="BMW_7.jpeg" alt="BMW 7 Series">
+      <h3>BMW 7 Series</h3>
+      <p>2021, 3.0L, 50000 km</p>
+      <p>Qiymət: 110,000 AZN</p>
+      <p><strong>Əlavə Məlumat:</strong></p>
+      <p>Yolun vəziyyəti: Avtomobil mükəmməl vəziyyətdədir, heç bir qəza izləri yoxdur.</p>
+      <p>Yanacaq sərfiyyatı: 100 km-də 9 litr yanacaq sərf edir.</p>
+      <p>Əlavə xüsusiyyətlər: Yüksək keyfiyyətli audio sistemi, panoramik tavan, yeni təkərlər.</p>
+      <p>Texniki xidmət: Bütün texniki xidmətlər yerinə yetirilib.</p>
+      <p>Sənədlər: Qeydiyyatlıdır və hüquqi baxımdan heç bir problemi yoxdur.</p>
+    </div>
+
+    <div class="elan">
+      <img src="BMW_8.jpg" alt="BMW 8 Series">
+      <h3>BMW 8 Series</h3>
+      <p>2022, 3.0L, 30000 km</p>
+      <p>Qiymət: 150,000 AZN</p>
+      <p><strong>Əlavə Məlumat:</strong></p>
+      <p>Yolun vəziyyəti: Avtomobil yeni kimidir, heç bir iz yoxdur.</p>
+      <p>Yanacaq sərfiyyatı: 100 km-də 10 litr yanacaq sərf edir.</p>
+      <p>Əlavə xüsusiyyətlər: Panoramik tavan, yeni təkərlər, yüksək keyfiyyətli audio sistemi.</p>
+      <p>Texniki xidmət: Bütün texniki xidmətlər vaxtında yerinə yetirilib.</p>
+      <p>Sənədlər: Bütün sənədlər tamdır və hüquqi baxımdan heç bir problemi yoxdur.</p>
+    </div>
+
+    <div class="elan">
+      <img src="BMW_X1.jpeg" alt="BMW X1">
+      <h3>BMW X1</h3>
+      <p>2020, 2.0L, 60000 km</p>
+      <p>Qiymət: 45,000 AZN</p>
+      <p><strong>Əlavə Məlumat:</strong></p>
+      <p>Yolun vəziyyəti: Avtomobil çox yaxşı vəziyyətdədir və heç bir qəza izləri yoxdur.</p>
+      <p>Yanacaq sərfiyyatı: 100 km-də 7 litr yanacaq sərf edir.</p>
+      <p>Əlavə xüsusiyyətlər: Panoramik tavan, yeni təkərlər, yüksək keyfiyyətli audio sistemi.</p>
+      <p>Texniki xidmət: Bütün texniki xidmətlər vaxtında yerinə yetirilib.</p>
+      <p>Sənədlər: Bütün sənədlər tamdır və hüquqi baxımdan heç bir problemi yoxdur.</p>
+    </div>
+
+    <div class="elan">
+      <img src="BMW_X2.jpeg" alt="BMW X2">
+      <h3>BMW X2</h3>
+      <p>2021, 2.0L, 50000 km</p>
+      <p>Qiymət: 50,000 AZN</p>
+      <p><strong>Əlavə Məlumat:</strong></p>
+      <p>Yolun vəziyyəti: Avtomobil mükəmməl vəziyyətdədir, heç bir qəza izləri yoxdur.</p>
+      <p>Yanacaq sərfiyyatı: 100 km-də 7 litr yanacaq sərf edir.</p>
+      <p>Əlavə xüsusiyyətlər: Panoramik tavan, park sensorları, yüksək keyfiyyətli audio sistemi, yeni təkərlər,
+        təhlükəsizlik sistemləri.</p>
+      <p>Texniki xidmət: Bütün texniki xidmətlər vaxtında yerinə yetirilib.</p>
+      <p>Sənədlər: Bütün sənədlər tamdır, qeydiyyatlıdır və hüquqi baxımdan heç bir problemi yoxdur.</p>
+    </div>
+
+    <div class="elan">
+      <img src="BMW_X3.jpeg" alt="BMW X3">
+      <h3>BMW X3</h3>
+      <p>2020, 2.0L, 65000 km</p>
+      <p>Qiymət: 55,000 AZN</p>
+      <p><strong>Əlavə Məlumat:</strong></p>
+      <p>Yolun vəziyyəti: Avtomobil mükəmməl vəziyyətdədir, heç bir zərər və ya qəza izləri yoxdur.</p>
+      <p>Yanacaq sərfiyyatı: 100 km-də 7.5 litr yanacaq sərf edir.</p>
+      <p>Əlavə xüsusiyyətlər: Panoramik tavan, yüksək keyfiyyətli audio sistemi.</p>
+      <p>Texniki xidmət: Bütün texniki xidmətlər vaxtında yerinə yetirilib.</p>
+      <p>Sənədlər: Bütün sənədlər tamdır və hüquqi baxımdan heç bir problemi yoxdur.</p>
+    </div>
+
+    <div class="elan">
+      <img src="BMW_X4.jpeg" alt="BMW X4">
+      <h3>BMW X4</h3>
+      <p>2021, 2.0L, 40000 km</p>
+      <p>Qiymət: 65,000 AZN</p>
+      <p><strong>Əlavə Məlumat:</strong></p>
+      <p>Yolun vəziyyəti: Avtomobilin vəziyyəti mükəmməldir, heç bir zərər yoxdur.</p>
+      <p>Yanacaq sərfiyyatı: 100 km-də 7.3 litr yanacaq sərf edir.</p>
+      <p>Əlavə xüsusiyyətlər: Panoramik tavan, yüksək keyfiyyətli audio sistemi, yeni təkərlər.</p>
+      <p>Texniki xidmət: Bütün texniki xidmətlər vaxtında yerinə yetirilib.</p>
+      <p>Sənədlər: Bütün sənədlər tamdır və hüquqi baxımdan heç bir problemi yoxdur.</p>
+    </div>
+
+    <div class="elan">
+      <img src="BMW_X5.jpeg" alt="BMW X5">
+      <h3>BMW X5</h3>
+      <p>2020, 3.0L, 70000 km</p>
+      <p>Qiymət: 80,000 AZN</p>
+      <p><strong>Əlavə Məlumat:</strong></p>
+      <p>Yolun vəziyyəti: Mükəmməl vəziyyətdədir, heç bir qəza və ya izlər yoxdur.</p>
+      <p>Yanacaq sərfiyyatı: 100 km-də 8 litr yanacaq sərf edir.</p>
+      <p>Əlavə xüsusiyyətlər: Panoramik tavan, yüksək keyfiyyətli audio sistemi, park sensorları.</p>
+      <p>Texniki xidmət: Bütün texniki xidmətlər vaxtında yerinə yetirilib.</p>
+      <p>Sənədlər: Bütün sənədlər tamdır və hüquqi baxımdan heç bir problemi yoxdur.</p>
+    </div>
+
+    <div class="elan">
+      <img src="BMW_X6.jpeg" alt="BMW X6">
+      <h3>BMW X6</h3>
+      <p>2021, 3.0L, 45000 km</p>
+      <p>Qiymət: 95,000 AZN</p>
+      <p><strong>Əlavə Məlumat:</strong></p>
+      <p>Yolun vəziyyəti: Avtomobilin vəziyyəti mükəmməldir, heç bir zərər yoxdur.</p>
+      <p>Yanacaq sərfiyyatı: 100 km-də 8 litr yanacaq sərf edir.</p>
+      <p>Əlavə xüsusiyyətlər: Panoramik tavan, yüksək keyfiyyətli audio sistemi.</p>
+      <p>Texniki xidmət: Bütün texniki xidmətlər vaxtında yerinə yetirilib.</p>
+      <p>Sənədlər: Bütün sənədlər tamdır və hüquqi baxımdan heç bir problemi yoxdur.</p>
+    </div>
+
+    <div class="elan">
+      <img src="BMW_X7.jpeg" alt="BMW X7">
+      <h3>BMW X7</h3>
+      <p>2022, 3.0L, 30000 km</p>
+      <p>Qiymət: 120,000 AZN</p>
+      <p><strong>Əlavə Məlumat:</strong></p>
+      <p>Yolun vəziyyəti: Avtomobil yeni kimidir, heç bir iz yoxdur.</p>
+      <p>Yanacaq sərfiyyatı: 100 km-də 9 litr yanacaq sərf edir.</p>
+      <p>Əlavə xüsusiyyətlər: Panoramik tavan, yeni təkərlər, yüksək keyfiyyətli audio sistemi.</p>
+      <p>Texniki xidmət: Bütün texniki xidmətlər vaxtında yerinə yetirilib.</p>
+      <p>Sənədlər: Bütün sənədlər tamdır və hüquqi baxımdan heç bir problemi yoxdur.</p>
+    </div>
+
+
+    <div class="elan">
+      <img src="BMW_XM.jpeg" alt="BMW XM">
+      <h3>BMW XM</h3>
+      <p>2023, 4.4L, 20000 km</p>
+      <p>Qiymət: 150,000 AZN</p>
+      <p><strong>Əlavə Məlumat:</strong></p>
+      <p>Yolun vəziyyəti: Avtomobil yeni vəziyyətdədir və heç bir zərər yoxdur.</p>
+      <p>Yanacaq sərfiyyatı: 100 km-də 12 litr yanacaq sərf edir.</p>
+      <p>Əlavə xüsusiyyətlər: Yüksək keyfiyyətli audio sistemi, panoramik tavan, yeni təkərlər.</p>
+      <p>Texniki xidmət: Bütün texniki xidmətlər vaxtında yerinə yetirilib.</p>
+      <p>Sənədlər: Bütün sənədlər tamdır və hüquqi baxımdan heç bir problemi yoxdur.</p>
+    </div>
+
+    <div class="elan">
+      <img src="BMW_I4.jpeg" alt="BMW i4">
+      <h3>BMW i4</h3>
+      <p>2022, 3.0L, 30000 km</p>
+      <p>Qiymət: 150,000 AZN</p>
+      <p><strong>Əlavə Məlumat:</strong></p>
+      <p>Yolun vəziyyəti: Avtomobil yeni kimidir, heç bir iz yoxdur.</p>
+      <p>Yanacaq sərfiyyatı: 100 km-də 10 litr yanacaq sərf edir.</p>
+      <p>Əlavə xüsusiyyətlər: Panoramik tavan, yeni təkərlər, yüksək keyfiyyətli audio sistemi.</p>
+      <p>Texniki xidmət: Bütün texniki xidmətlər vaxtında yerinə yetirilib.</p>
+      <p>Sənədlər: Bütün sənədlər tamdır və hüquqi baxımdan heç bir problemi yoxdur.</p>
+    </div>
+
+    <div class="elan">
+      <img src="BMW_I5.jpeg" alt="BMW i5">
+      <h3>BMW i5</h3>
+      <p>2022, 3.0L, 30000 km</p>
+      <p>Qiymət: 150,000 AZN</p>
+      <p><strong>Əlavə Məlumat:</strong></p>
+      <p>Yolun vəziyyəti: Avtomobil yeni kimidir, heç bir iz yoxdur.</p>
+      <p>Yanacaq sərfiyyatı: 100 km-də 10 litr yanacaq sərf edir.</p>
+      <p>Əlavə xüsusiyyətlər: Panoramik tavan, yeni təkərlər, yüksək keyfiyyətli audio sistemi.</p>
+      <p>Texniki xidmət: Bütün texniki xidmətlər vaxtında yerinə yetirilib.</p>
+      <p>Sənədlər: Bütün sənədlər tamdır və hüquqi baxımdan heç bir problemi yoxdur.</p>
+    </div>
+
+    <div class="elan">
+      <img src="BMW_I7.jpeg" alt="BMW i7">
+      <h3>BMW i7</h3>
+      <p>2022, 3.0L, 30000 km</p>
+      <p>Qiymət: 150,000 AZN</p>
+      <p><strong>Əlavə Məlumat:</strong></p>
+      <p>Yolun vəziyyəti: Avtomobil yeni kimidir, heç bir iz yoxdur.</p>
+      <p>Yanacaq sərfiyyatı: 100 km-də 10 litr yanacaq sərf edir.</p>
+      <p>Əlavə xüsusiyyətlər: Panoramik tavan, yeni təkərlər, yüksək keyfiyyətli audio sistemi.</p>
+      <p>Texniki xidmət: Bütün texniki xidmətlər vaxtında yerinə yetirilib.</p>
+      <p>Sənədlər: Bütün sənədlər tamdır və hüquqi baxımdan heç bir problemi yoxdur.</p>
+    </div>
+
+    <div class="elan">
+      <img src="BMW_IX1.jpeg" alt="BMW ix1">
+      <h3>BMW iX1</h3>
+      <p>2020, 3.0L, 70000 km</p>
+      <p>Qiymət: 80,000 AZN</p>
+      <p><strong>Əlavə Məlumat:</strong></p>
+      <p>Yolun vəziyyəti: Mükəmməl vəziyyətdədir, heç bir qəza və ya izlər yoxdur.</p>
+      <p>Yanacaq sərfiyyatı: 100 km-də 8 litr yanacaq sərf edir.</p>
+      <p>Əlavə xüsusiyyətlər: Panoramik tavan, yüksək keyfiyyətli audio sistemi, park sensorları.</p>
+      <p>Texniki xidmət: Bütün texniki xidmətlər vaxtında yerinə yetirilib.</p>
+      <p>Sənədlər: Bütün sənədlər tamdır və hüquqi baxımdan heç bir problemi yoxdur.</p>
+    </div>
+
+    <div class="elan">
+      <img src="BMW_IX3.jpeg" alt="BMW iX3">
+      <h3>BMW iX3</h3>
+      <p>2020, 3.0L, 70000 km</p>
+      <p>Qiymət: 80,000 AZN</p>
+      <p><strong>Əlavə Məlumat:</strong></p>
+      <p>Yolun vəziyyəti: Mükəmməl vəziyyətdədir, heç bir qəza və ya izlər yoxdur.</p>
+      <p>Yanacaq sərfiyyatı: 100 km-də 8 litr yanacaq sərf edir.</p>
+      <p>Əlavə xüsusiyyətlər: Panoramik tavan, yüksək keyfiyyətli audio sistemi, park sensorları.</p>
+      <p>Texniki xidmət: Bütün texniki xidmətlər vaxtında yerinə yetirilib.</p>
+      <p>Sənədlər: Bütün sənədlər tamdır və hüquqi baxımdan heç bir problemi yoxdur.</p>
+    </div>
+
+    <div class="elan">
+      <img src="BMW_IX.jpeg" alt="BMW iX">
+      <h3>BMW iX</h3>
+      <p>2020, 3.0L, 70000 km</p>
+      <p>Qiymət: 80,000 AZN</p>
+      <p><strong>Əlavə Məlumat:</strong></p>
+      <p>Yolun vəziyyəti: Mükəmməl vəziyyətdədir, heç bir qəza və ya izlər yoxdur.</p>
+      <p>Yanacaq sərfiyyatı: 100 km-də 8 litr yanacaq sərf edir.</p>
+      <p>Əlavə xüsusiyyətlər: Panoramik tavan, yüksək keyfiyyətli audio sistemi, park sensorları.</p>
+      <p>Texniki xidmət: Bütün texniki xidmətlər vaxtında yerinə yetirilib.</p>
+      <p>Sənədlər: Bütün sənədlər tamdır və hüquqi baxımdan heç bir problemi yoxdur.</p>
+    </div>
+
+    <div class="elan">
+      <img src="BMW_M2.jpeg" alt="BMW M2">
+      <h3>BMW M2</h3>
+      <p>2020, 3.0L, 70000 km</p>
+      <p>Qiymət: 80,000 AZN</p>
+      <p><strong>Əlavə Məlumat:</strong></p>
+      <p>Yolun vəziyyəti: Mükəmməl vəziyyətdədir, heç bir qəza və ya izlər yoxdur.</p>
+      <p>Yanacaq sərfiyyatı: 100 km-də 8 litr yanacaq sərf edir.</p>
+      <p>Əlavə xüsusiyyətlər: Panoramik tavan, yüksək keyfiyyətli audio sistemi, park sensorları.</p>
+      <p>Texniki xidmət: Bütün texniki xidmətlər vaxtında yerinə yetirilib.</p>
+      <p>Sənədlər: Bütün sənədlər tamdır və hüquqi baxımdan heç bir problemi yoxdur.</p>
+    </div>
+
+    <div class="elan">
+      <img src="BMW_M3.jpeg" alt="BMW M3">
+      <h3>BMW M3</h3>
+      <p>2020, 3.0L, 70000 km</p>
+      <p>Qiymət: 80,000 AZN</p>
+      <p><strong>Əlavə Məlumat:</strong></p>
+      <p>Yolun vəziyyəti: Mükəmməl vəziyyətdədir, heç bir qəza və ya izlər yoxdur.</p>
+      <p>Yanacaq sərfiyyatı: 100 km-də 8 litr yanacaq sərf edir.</p>
+      <p>Əlavə xüsusiyyətlər: Panoramik tavan, yüksək keyfiyyətli audio sistemi, park sensorları.</p>
+      <p>Texniki xidmət: Bütün texniki xidmətlər vaxtında yerinə yetirilib.</p>
+      <p>Sənədlər: Bütün sənədlər tamdır və hüquqi baxımdan heç bir problemi yoxdur.</p>
+    </div>
+
+    <div class="elan">
+      <img src="BMW_M4.jpeg" alt="BMW M4">
+      <h3>BMW M4</h3>
+      <p>2020, 3.0L, 70000 km</p>
+      <p>Qiymət: 80,000 AZN</p>
+      <p><strong>Əlavə Məlumat:</strong></p>
+      <p>Yolun vəziyyəti: Mükəmməl vəziyyətdədir, heç bir qəza və ya izlər yoxdur.</p>
+      <p>Yanacaq sərfiyyatı: 100 km-də 8 litr yanacaq sərf edir.</p>
+      <p>Əlavə xüsusiyyətlər: Panoramik tavan, yüksək keyfiyyətli audio sistemi, park sensorları.</p>
+      <p>Texniki xidmət: Bütün texniki xidmətlər vaxtında yerinə yetirilib.</p>
+      <p>Sənədlər: Bütün sənədlər tamdır və hüquqi baxımdan heç bir problemi yoxdur.</p>
+    </div>
+
+    <div class="elan">
+      <img src="BMW_M5.jpeg" alt="BMW M5">
+      <h3>BMW M5</h3>
+      <p>2020, 3.0L, 70000 km</p>
+      <p>Qiymət: 80,000 AZN</p>
+      <p><strong>Əlavə Məlumat:</strong></p>
+      <p>Yolun vəziyyəti: Mükəmməl vəziyyətdədir, heç bir qəza və ya izlər yoxdur.</p>
+      <p>Yanacaq sərfiyyatı: 100 km-də 8 litr yanacaq sərf edir.</p>
+      <p>Əlavə xüsusiyyətlər: Panoramik tavan, yüksək keyfiyyətli audio sistemi, park sensorları.</p>
+      <p>Texniki xidmət: Bütün texniki xidmətlər vaxtında yerinə yetirilib.</p>
+      <p>Sənədlər: Bütün sənədlər tamdır və hüquqi baxımdan heç bir problemi yoxdur.</p>
+    </div>
+
+    <div class="elan">
+      <img src="BMW_M8.jpeg" alt="BMW M8">
+      <h3>BMW M8</h3>
+      <p>2020, 3.0L, 70000 km</p>
+      <p>Qiymət: 80,000 AZN</p>
+      <p><strong>Əlavə Məlumat:</strong></p>
+      <p>Yolun vəziyyəti: Mükəmməl vəziyyətdədir, heç bir qəza və ya izlər yoxdur.</p>
+      <p>Yanacaq sərfiyyatı: 100 km-də 8 litr yanacaq sərf edir.</p>
+      <p>Əlavə xüsusiyyətlər: Panoramik tavan, yüksək keyfiyyətli audio sistemi, park sensorları.</p>
+      <p>Texniki xidmət: Bütün texniki xidmətlər vaxtında yerinə yetirilib.</p>
+      <p>Sənədlər: Bütün sənədlər tamdır və hüquqi baxımdan heç bir problemi yoxdur.</p>
+    </div>
+
+    <script>
+      // Sayfadakı bütün ".elan" sinifinə malik elanları seçirik
+const elanlar = document.querySelectorAll('.elan');
+
+// Hər bir elanın üzərindən keçirik
+elanlar.forEach((elan, index) => {
+  
+  // Yeni bir "button" elementi yaradırıq
+  const button = document.createElement('button');
+  button.innerText = "Ətraflı Məlumat"; // Düymənin üzərindəki yazı
+
+  // Yeni bir "a" (link) elementi yaradırıq
+  const link = document.createElement('a');
+
+  // Hər bir BMW modelinə uyğun linkləri saxlayan array
+  const modelLinks = [
+    "https://www.bmw.com.tr/tr/all-models/2-series.html",
+    "https://www.bmw.com.tr/tr/all-models/3-series.html",
+    "https://www.bmw.com.tr/tr/all-models/4-series.html",
+    "https://www.bmw.com.tr/tr/all-models/5-series.html",
+    "https://www.bmw.com.tr/tr/all-models/7-series.html",
+    "https://www.bmw.com.tr/tr/all-models/8-series.html",
+    "https://www.bmw.com.tr/tr/all-models/x1.html",
+    "https://www.bmw.com.tr/tr/all-models/x2.html",
+    "https://www.bmw.com.tr/tr/all-models/x3.html",
+    "https://www.bmw.com.tr/tr/all-models/x4.html",
+    "https://www.bmw.com.tr/tr/all-models/x5.html",
+    "https://www.bmw.com.tr/tr/all-models/x6.html",
+    "https://www.bmw.com.tr/tr/all-models/x7.html",
+    "https://www.bmw.com.tr/tr/all-models/xm.html",
+    "https://www.bmw.com.tr/tr/all-models/i4.html",
+    "https://www.bmw.com.tr/tr/all-models/i5.html",
+    "https://www.bmw.com.tr/tr/all-models/i7.html",
+    "https://www.bmw.com.tr/tr/all-models/ix1.html",
+    "https://www.bmw.com.tr/tr/all-models/ix3.html",
+    "https://www.bmw.com.tr/tr/all-models/ix.html",
+    "https://www.bmw.com.tr/tr/all-models/m2.html",
+    "https://www.bmw.com.tr/tr/all-models/m3.html",
+    "https://www.bmw.com.tr/tr/all-models/m4.html",
+    "https://www.bmw.com.tr/tr/all-models/m5.html",
+    "https://www.bmw.com.tr/tr/all-models/m8.html"
+  ];
+
+  // Elan nömrəsinə uyğun linki təyin edirik (əgər yoxdursa "#" istifadə olunur)
+  link.href = modelLinks[index] || "#";
+
+  // Linkin üzərində görünəcək yazı
+  link.innerText = "Ətraflı bax";
+
+  // Link yeni səhifədə açılsın deyə `target="_blank"` təyin edilir
+  link.target = "_blank";
+
+  // Link əvvəlcədən görünməsin deyə `display: none` edilir
+  link.style.display = "none";
+
+  // Button və linki elan div-inə əlavə edirik
+  elan.appendChild(button);
+  elan.appendChild(link);
+
+  // Button kliklənəndə link görünür və avtomatik klik olunur
+  button.addEventListener('click', () => {
+    link.style.display = "inline"; // Link görünür olur
+    link.click(); // Avtomatik klik edilir (istifadəçini linkə yönləndirir)
+  });
+});
+
     </script>
     <script>
-      let elan3 = document.querySelectorAll('.elan')[2];  
-      let button3 = document.createElement('button');      
-      button3.innerText = "Ətraflı Məlumat";
+  link.style.display = "none";
+  elan.appendChild(button);
+  elan.appendChild(link);
+  button.addEventListener('click', () => {
+    link.style.display = "inline"; // Link görünür olur
+    link.click(); // Avtomatik klik edilir (istifadəçini linkə yönləndirir)
+  });
 
-      let link3 = document.createElement('a');             
-      link3.href = "https://www.bmw.com.tr/tr/all-models/4-series.html";
-      link3.innerText = "Ətraflı bax";
-      link3.target = "_blank";
-      link3.style.display = "none";
-
-      elan3.appendChild(button3);                           
-      elan3.appendChild(link3);                             
-
-      button3.addEventListener('click', function () {       
-        link3.style.display = "inline";
-        link3.click();
-      });
     </script>
- 
- <script>
-  let elan4 = document.querySelectorAll('.elan')[3];  
-  let button4 = document.createElement('button');      
-  button4.innerText = "Ətraflı Məlumat";
-  
-  let link4 = document.createElement('a');             
-  link4.href = "https://www.bmw.com.tr/tr/all-models/5-series.html";
-  link4.innerText = "Ətraflı bax";
-  link4.target = "_blank";
-  link4.style.display = "none"; 
-  
-  elan4.appendChild(button4);                           
-  elan4.appendChild(link4);                             
-  
-  button4.addEventListener('click', function() {        
-    link4.style.display = "inline"; 
-    link4.click(); 
-  });
-</script>
-<script>
-  
-  let elan5 = document.querySelectorAll('.elan')[4];
-  let button5 = document.createElement('button');
-  button5.innerText = "Ətraflı Məlumat";
-  
-  let link5 = document.createElement('a');
-  link5.href = "https://www.bmw.com.tr/tr/all-models/7-series.html";
-  link5.innerText = "Ətraflı bax";
-  link5.target = "_blank";
-  link5.style.display = "none"; 
-  
-  elan5.appendChild(button5);
-  elan5.appendChild(link5);
-  
-  button5.addEventListener('click', function() {
-    link5.style.display = "inline"; 
-    link5.click(); 
-  });
-
-  let elan6 = document.querySelectorAll('.elan')[5];
-  let button6 = document.createElement('button');
-  button6.innerText = "Ətraflı Məlumat";
-  
-  let link6 = document.createElement('a');
-  link6.href = "https://www.bmw.com.tr/tr/all-models/8-serisi/coupe/2022/bmw-8-serisi-coupe-one-cikan-ozellikler.html";
-  link6.innerText = "Ətraflı bax";
-  link6.target = "_blank";
-  link6.style.display = "none"; 
-  
-  elan6.appendChild(button6);
-  elan6.appendChild(link6);
-  
-  button6.addEventListener('click', function() {
-    link6.style.display = "inline"; 
-    link6.click(); 
-  });
-
-  let elan7 = document.querySelectorAll('.elan')[6];
-  let button7 = document.createElement('button');
-  button7.innerText = "Ətraflı Məlumat";
-  
-  let link7 = document.createElement('a');
-  link7.href = "https://www.bmw.com.tr/tr/all-models/x-serisi/x1/bmw-x1.html";
-  link7.innerText = "Ətraflı bax";
-  link7.target = "_blank";
-  link7.style.display = "none"; 
-  
-  elan7.appendChild(button7);
-  elan7.appendChild(link7);
-  
-  button7.addEventListener('click', function() {
-    link7.style.display = "inline"; 
-    link7.click(); 
-  });
-
-
-  let elan8 = document.querySelectorAll('.elan')[7];
-  let button8 = document.createElement('button');
-  button8.innerText = "Ətraflı Məlumat";
-  
-  let link8 = document.createElement('a');
-  link8.href = "https://www.bmw.com.tr/tr/all-models/x-serisi/X2/bmw-x2-genel-bakis.html";
-  link8.innerText = "Ətraflı bax";
-  link8.target = "_blank";
-  link8.style.display = "none"; 
-  
-  elan8.appendChild(button8);
-  elan8.appendChild(link8);
-  
-  button8.addEventListener('click', function() {
-    link8.style.display = "inline"; 
-    link8.click(); 
-  });
-
-
-  let elan9 = document.querySelectorAll('.elan')[8];
-  let button9 = document.createElement('button');
-  button9.innerText = "Ətraflı Məlumat";
-  
-  let link9 = document.createElement('a');
-  link9.href = "https://www.bmwusa.com/vehicles/x-series/x3/bmw-x3.html";
-  link9.innerText = "Ətraflı bax";
-  link9.target = "_blank";
-  link9.style.display = "none"; 
-  
-  elan9.appendChild(button9);
-  // 14-cü Element
-  let elan10 = document.querySelectorAll('.elan')[9];
-  let button10 = document.createElement('button');
-  button10.innerText = "Ətraflı Məlumat";
-  
-  let link10 = document.createElement('a');
-  link10.href = "https://www.bmwusa.com/vehicles/x-models/x4/sports-activity-coupe/overview.html";
-  link10.innerText = "Ətraflı bax";
-  link10.target = "_blank";
-  link10.style.display = "none"; 
-  
-  elan10.appendChild(button10);
-  elan10.appendChild(link10);
-  
-  button10.addEventListener('click', function() {
-    link10.style.display = "inline"; 
-    link10.click(); 
-  });
-
-
-  let elan11 = document.querySelectorAll('.elan')[10];
-  let button11 = document.createElement('button');
-  button11.innerText = "Ətraflı Məlumat";
-  
-  let link11 = document.createElement('a');
-  link11.href = "https://www.bmwusa.com/vehicles/x-models/x5/suv/overview.html";
-  link11.innerText = "Ətraflı bax";
-  link11.target = "_blank";
-  link11.style.display = "none"; 
-  
-  elan11.appendChild(button11);
-  elan11.appendChild(link11);
-  
-  button11.addEventListener('click', function() {
-    link11.style.display = "inline"; 
-    link11.click(); 
-  });
-
-  let elan12 = document.querySelectorAll('.elan')[11];
-  let button12 = document.createElement('button');
-  button12.innerText = "Ətraflı Məlumat";
-  
-  let link12 = document.createElement('a');
-  link12.href = "https://www.bmwusa.com/vehicles/x-models/x6/suv/overview.html";
-  link12.innerText = "Ətraflı bax";
-  link12.target = "_blank";
-  link12.style.display = "none"; 
-  
-  elan12.appendChild(button12);
-  elan12.appendChild(link12);
-  
-  button12.addEventListener('click', function() {
-    link12.style.display = "inline"; 
-    link12.click(); 
-  });
-
- 
-  let elan13 = document.querySelectorAll('.elan')[12];
-  let button13 = document.createElement('button');
-  button13.innerText = "Ətraflı Məlumat";
-  
-  let link13 = document.createElement('a');
-  link13.href = "https://www.bmwusa.com/vehicles/x-models/x7/suv/overview.html";
-  link13.innerText = "Ətraflı bax";
-  link13.target = "_blank";
-  link13.style.display = "none"; 
-  
-  elan13.appendChild(button13);
-  elan13.appendChild(link13);
-  
-  button13.addEventListener('click', function() {
-    link13.style.display = "inline"; 
-    link13.click(); 
-  });
-
-  let elan14 = document.querySelectorAll('.elan')[13];
-  let button14 = document.createElement('button');
-  button14.innerText = "Ətraflı Məlumat";
-  
-  let link14 = document.createElement('a');
-  link14.href = "https://www.bmwusa.com/vehicles/m-models/xm-plug-in-hybrid/overview.html";
-  link14.innerText = "Ətraflı bax";
-  link14.target = "_blank";
-  link14.style.display = "none"; 
-  
-  elan14.appendChild(button14);
-  elan14.appendChild(link14);
-  
-  button14.addEventListener('click', function() {
-    link14.style.display = "inline"; 
-    link14.click(); 
-  });
-
-
-let elan15 = document.querySelectorAll('.elan')[14];
-  let button15 = document.createElement('button');
-  button15.innerText = "Ətraflı Məlumat";
-  
-  let link15 = document.createElement('a');
-  link15.href = "https://www.bmwusa.com/vehicles/bmw-i-series/i4/bmw-i4-gran-coupe.html";
-  link15.innerText = "Ətraflı bax";
-  link15.target = "_blank";
-  link15.style.display = "none"; 
-  
-  elan15.appendChild(button15);
-  elan15.appendChild(link15);
-  
-  button15.addEventListener('click', function() {
-    link15.style.display = "inline"; 
-    link15.click(); 
-  });
-
-  
-  let elan16 = document.querySelectorAll('.elan')[15];
-  let button16 = document.createElement('button');
-  button16.innerText = "Ətraflı Məlumat";
-  
-  let link16 = document.createElement('a');
-  link16.href = "https://www.bmw.az/ru/all-models/bmw-i/i5/bmw-i5-overview.html#tabs-d04dc56d6e-item-618bad993b-tab";
-  link16.innerText = "Ətraflı bax";
-  link16.target = "_blank";
-  link16.style.display = "none"; 
-  
-  elan16.appendChild(button16);
-  elan16.appendChild(link16);
-  
-  button16.addEventListener('click', function() {
-    link16.style.display = "inline"; 
-    link16.click(); 
-  });
-
-
-  let elan17 = document.querySelectorAll('.elan')[16];
-  let button17 = document.createElement('button');
-  button17.innerText = "Ətraflı Məlumat";
-  
-  let link17 = document.createElement('a');
-  link17.href = "https://www.bmwusa.com/vehicles/all-electric/i7/sedan/overview.html";
-  link17.innerText = "Ətraflı bax";
-  link17.target = "_blank";
-  link17.style.display = "none"; 
-  
-  elan17.appendChild(button17);
-  elan17.appendChild(link17);
-  
-  button17.addEventListener('click', function() {
-    link17.style.display = "inline"; 
-    link17.click(); 
-  });
-
-  // 18-ci Element
-  let elan18 = document.querySelectorAll('.elan')[17];
-  let button18 = document.createElement('button');
-  button18.innerText = "Ətraflı Məlumat";
-  
-  let link18 = document.createElement('a');
-  link18.href = "https://www.bmw.co.uk/en/all-models/bmw-i/ix1/bmw-ix1.html";
-  link18.innerText = "Ətraflı bax";
-  link18.target = "_blank";
-  link18.style.display = "none"; 
-  
-  elan18.appendChild(button18);
-  elan18.appendChild(link18);
-  
-  button18.addEventListener('click', function() {
-    link18.style.display = "inline"; 
-    link18.click(); 
-  });
-
-
-  let elan19 = document.querySelectorAll('.elan')[18];
-  let button19 = document.createElement('button');
-  button19.innerText = "Ətraflı Məlumat";
-  
-  let link19 = document.createElement('a');
-  link19.href = "https://www.bmw-me.com/en/all-models/x-series/iX3/2021/bmw-ix3-highlights.html";
-  link19.innerText = "Ətraflı bax";
-  link19.target = "_blank";
-  link19.style.display = "none"; 
-  
-  elan19.appendChild(button19);
-  elan19.appendChild(link19);
-  
-  button19.addEventListener('click', function() {
-    link19.style.display = "inline"; 
-    link19.click(); 
-  });
-
-  let elan20 = document.querySelectorAll('.elan')[19];
-  let button20 = document.createElement('button');
-  button20.innerText = "Ətraflı Məlumat";
-  
-  let link20 = document.createElement('a');
-  link20.href = "https://www.bmwusa.com/vehicles/all-electric/ix/suv/overview.html";
-  link20.innerText = "Ətraflı bax";
-  link20.target = "_blank";
-  link20.style.display = "none"; 
-  
-  elan20.appendChild(button20);
-  elan20.appendChild(link20);
-  
-  button20.addEventListener('click', function() {
-    link20.style.display = "inline"; 
-    link20.click(); 
-  });
-
-  
-  let elan21 = document.querySelectorAll('.elan')[20];
-  let button21 = document.createElement('button');
-  button21.innerText = "Ətraflı Məlumat";
-  
-  let link21 = document.createElement('a');
-  link21.href = "https://www.bmwusa.com/vehicles/m-models/m2-coupe/overview.html";
-  link21.innerText = "Ətraflı bax";
-  link21.target = "_blank";
-  link21.style.display = "none"; 
-  
-  elan21.appendChild(button21);
-  elan21.appendChild(link21);
-  
-  button21.addEventListener('click', function() {
-    link21.style.display = "inline"; 
-    link21.click(); 
-  });
-
-  
-  let elan22 = document.querySelectorAll('.elan')[21];
-  let button22 = document.createElement('button');
-  button22.innerText = "Ətraflı Məlumat";
-  
-  let link22 = document.createElement('a');
-  link22.href = "https://www.bmwusa.com/vehicles/m-series/m3-series/bmw-m3-sedan.html";
-  link22.innerText = "Ətraflı bax";
-  link22.target = "_blank";
-  link22.style.display = "none"; 
-  
-  elan22.appendChild(button22);
-  elan22.appendChild(link22);
-  
-  button22.addEventListener('click', function() {
-    link22.style.display = "inline"; 
-    link22.click(); 
-  });
-
-
-  let elan23 = document.querySelectorAll('.elan')[22];
-  let button23 = document.createElement('button');
-  button23.innerText = "Ətraflı Məlumat";
-  
-  let link23 = document.createElement('a');
-  link23.href = "https://www.bmwusa.com/vehicles/m-series/bmw-4-series-m-models/bmw-m4-coupe.html";
-  link23.innerText = "Ətraflı bax";
-  link23.target = "_blank";
-  link23.style.display = "none"; 
-  
-  elan23.appendChild(button23);
-  elan23.appendChild(link23);
-  
-  button23.addEventListener('click', function() {
-    link23.style.display = "inline"; 
-    link23.click(); 
-  });
-
-  
-  let elan24 = document.querySelectorAll('.elan')[23];
-  let button24 = document.createElement('button');
-  button24.innerText = "Ətraflı Məlumat";
-  
-  let link24 = document.createElement('a');
-  link24.href = "https://www.bmwusa.com/vehicles/m-series/m5-series/bmw-m5-sedan.html";
-  link24.innerText = "Ətraflı bax";
-  link24.target = "_blank";
-  link24.style.display = "none"; 
-  
-  elan24.appendChild(button24);
-  elan24.appendChild(link24);
-  
-  button24.addEventListener('click', function() {
-    link24.style.display = "inline"; 
-    link24.click(); 
-  });
-
-
-  let elan25 = document.querySelectorAll('.elan')[24];
-  let button25 = document.createElement('button');
-  button25.innerText = "Ətraflı Məlumat";
-  
-  let link25 = document.createElement('a');
-  link25.href = "https://www.bmwusa.com/vehicles/m-models/m8-gran-coupe/overview.html";
-  link25.innerText = "Ətraflı bax";
-  link25.target = "_blank";
-  link25.style.display = "none"; 
-  
-  elan25.appendChild(button25);
-  elan25.appendChild(link25);
-  
-  button25.addEventListener('click', function() {
-    link25.style.display = "inline"; 
-    link25.click(); 
-  });
-</script>
-
-
+    
 
 </body>
 
